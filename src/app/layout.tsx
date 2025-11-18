@@ -3,6 +3,7 @@ import DisableDevtool from '@/components/disable-devtool';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Roboto, Roboto_Mono } from 'next/font/google';
+import { headers } from 'next/headers'
 config.autoAddCss = false;
 const robotoSans = Roboto({
     variable: '--font-roboto-sans',
