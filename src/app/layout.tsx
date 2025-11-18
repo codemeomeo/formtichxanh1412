@@ -14,6 +14,17 @@ const robotoMono = Roboto_Mono({
     subsets: ['latin']
 });
 
+export const generateMetadata = async () => {
+  const h = headers()
+  const host = h.get('x-forwarded-host') || h.get('host')
+  const proto = h.get('x-forwarded-proto') || 'https'
+  const base = `${proto}://${host}`
+
+  return {
+    metadataBase: new URL(base)
+  }
+}
+
 const RootLayout = ({
     children
 }: Readonly<{
